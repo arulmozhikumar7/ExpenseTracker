@@ -15,7 +15,9 @@ const TransactionList = ({ onExpenseDeleted }) => {
   useEffect(() => {
     const fetchExpenses = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/getExpenses");
+        const response = await axios.get(
+          "https://expense-tracker-backend-9fni.onrender.com/getExpenses"
+        );
         setExpenses(response.data);
       } catch (error) {
         console.error("Error fetching expenses:", error.message);

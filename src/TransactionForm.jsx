@@ -15,11 +15,14 @@ const TransactionForm = ({ onAddExpense }) => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/addExpense", {
-        description,
-        amount: parseFloat(amount),
-        transactionDate: new Date().toISOString(), // Include transactionDate
-      });
+      const response = await axios.post(
+        "https://expense-tracker-backend-9fni.onrender.com/addExpense",
+        {
+          description,
+          amount: parseFloat(amount),
+          transactionDate: new Date().toISOString(), // Include transactionDate
+        }
+      );
 
       console.log("Expense added:", response.data);
 
