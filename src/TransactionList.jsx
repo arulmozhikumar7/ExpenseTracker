@@ -30,7 +30,7 @@ const TransactionList = ({ onExpenseDeleted }) => {
   const handleDeleteExpense = async (expenseId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/deleteExpense/${expenseId}`
+        `https://expense-tracker-backend-9fni.onrender.com/${expenseId}`
       );
       console.log("Expense deleted:", response.data);
       onExpenseDeleted(); // Trigger a refresh after deletion
@@ -49,7 +49,7 @@ const TransactionList = ({ onExpenseDeleted }) => {
   const handleSaveEdit = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/editExpense/${editingExpenseId}`,
+        `https://expense-tracker-backend-9fni.onrender.com/${editingExpenseId}`,
         {
           description: editedDescription,
           amount: parseFloat(editedAmount),
